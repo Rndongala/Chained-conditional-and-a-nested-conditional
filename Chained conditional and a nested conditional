@@ -1,0 +1,93 @@
+#Instruction.
+
+#Describe the difference between a chained conditional and a nested conditional. Give your own example of each. Do not copy examples from the textbook.
+
+#Deeply nested conditionals can become difficult to read. Describe a strategy for avoiding nested conditionals. Give your own example of a nested conditional that can be modified to become a single conditional and show the equivalent single conditional. Do not copy the example from the textbook.
+
+#The code and its output must be explained technically whenever asked. The explanation can be provided before or after the code, or in the form of code comments within the code. For any descriptive type of question.
+
+#Resolution.
+
+A.
+#1. A chained conditional and a nested conditional are both structures used in programming to handle multiple conditions, but they have different approaches:
+- Chained conditional: 
+* # In a chained conditional, multiple conditions are evaluated one after another in sequence. If the first condition is not met, the program moves on to check the next condition, and so on until a condition is met or until all the conditions have been evaluated.
+* # Chained conditionals are usually implemented using if, elif, else statements.
+
+Example:
+x = 3
+if x < 0:
+    print("x is negative")
+elif x == 0:
+    print("x is zero")
+elif x < 3:
+    print("x is positive but less than 3")
+else:
+    print("x is positive and greater than or equal to 3")
+
+2. Nested conditional:
+* #In nested conditional, one or more conditional statements are nested inside another conditional statement. Each nested condition is evaluated only if its outer condition is true.
+* #They are often implemented using if statements inside other if statements.
+
+Example:
+x = 3
+if x >= 0:
+    if x == 0:
+        print("x is zero")
+    else:
+        print("x is positive")
+else:
+    print("x is negative")
+
+B.
+# A strategy for avoiding deeply nested conditionals is to use logical operation such as 'and' and 'or' to combine conditions into a single conditional statement. This approach allows for more concise and readable code, as it makes the logic clearer.
+# Here an example of a nested conditional that can be modified to become a single conditional:
+
+* Nested conditional
+#The nested conditional structure creates a hierarchy where the inner if statement is dependent on the outer if statement. While this logic is functional, it can become less readable and more complex, especially with deeper nesting levels.
+
+#In this example, the nested conditional is avoided by combining the conditions 'x > 0' and 'y > 0' using the 'and' operator.
+
+Input
+#Two variables, x and y, are initialized with values 5 and 3 respectively.
+x = 5
+y = 3
+#If x is positive (x > 0), the program proceeds to evaluate the inner if statement.
+#If y is also positive (y > 0), the program prints "Both x and y are positive".
+if x > 0:
+    if y > 0:
+           print("Both x and y are positive")
+#If y is not positive (y <= 0), the program prints "x is positive but y is not".
+    else:
+           print("x is positive but y is not")
+#If x is not positive (x <= 0), the program directly prints "x is not positive".
+else:
+       print("x is not positive"
+  
+Output:
+  Both x and y are positive
+
+* Single conditional
+  
+#This single conditional approach improves readability by avoiding deep nesting. It logically combines the conditions for clarity, making the code easier to understand and maintain.
+Input
+#Two variables, x and y, are initialized with values 5 and 3 respectively.
+x = 5
+y = 3
+#If both x and y are positive (greater than 0), the program prints "Both x and y are positive".
+if x > 0 and y > 0:
+     print("Both x and y are positive")
+#If only x is positive and y is not positive, the program prints "x is positive but y is not".
+elif x > 0:
+     print("x is positive but y is not")
+#If x is not positive (less than or equal to 0), the program prints "x is not positive".
+else:
+     print("x is not positive")
+Output:
+Both x and y are positive
+
+#I used two variables, 'x' and 'y', are initialized with values '5' and '3' respectively.
+#the 'if' statement begins by checking if both 'x' and 'y' are positive using the logical 'and' operator.
+#if both condition are true, the program executes the print statement "Both x and y are positive".
+#If the first condition "x > 0" is true but the second condition "y > 0" is false, the program proceeds to the 'elif' statement.
+#If neither condition "x > 0" and "y > 0" is true, the program executes the 'else' statement.
